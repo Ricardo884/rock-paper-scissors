@@ -1,4 +1,4 @@
-let playerName = window.prompt("Enter your name");
+let playerName = "Player"
 
 
 const beats = {
@@ -12,6 +12,7 @@ function playGame() {
 
     let humanScore = 0;
     let computerScore = 0;
+    playerName = window.prompt("Enter your name");
 
 
     function getHumanChoice() {
@@ -57,11 +58,13 @@ if (humanScore > computerScore) {
     console.log(`Final result, congratulations ${playerName} you won!`);
 }
 else if (humanScore < computerScore) {
-    console.log("Final result, you lose! Better luck next time!");
+    console.log(`Final result, you lose! ${playerName} Better luck next time!`);
 }
 else {
     console.log("It's a draw!");
 }
 }
 
-playGame();
+setTimeout(() => {
+    playGame();
+}, 300);
